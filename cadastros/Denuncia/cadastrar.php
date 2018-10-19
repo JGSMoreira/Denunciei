@@ -15,26 +15,31 @@ $titulo = "Fazer Denúncia";
    <body>
      <form method="post" action="cadastrar_bo_salvar.php">
        <div class="form-group">
-         <label for="nome">Titulo da Denúncia</label>
-         <input type="text" class="form-control" name="titulo"  placeholder="Digite o titulo da denúncia">
+         <label for="nome">Título</label>
+         <input type="text" class="form-control" name="titulo"  placeholder="Digite o titulo da denúncia.">
+       </div>
+
+       <div class="form-group">
+         <label for="suspeito">Suspeito</label>
+         <input type="text" class="form-control" name="suspeito" placeholder="Digite o nome do suspeito.">
+       </div>
+
+       <div class="form-group">
+         <label for="data">Data do ocorrido</label>
+         <input type="date" class="form-control" name="data"  placeholder="Digite a data do ocorrido.">
        </div>
 
       <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" name="email"  placeholder="Digite o email">
-      </div>
-
-      <div class="form-group">
          <label for="descricao">Descrição</label>
-         <textarea rows="10" cols="30" class="form-control" name="descricao"  placeholder="Descreva o ocorrido com a maior quantidade de detalhes possíveis."></textarea>
+         <textarea rows="10" cols="30" class="form-control" name="descricao"  placeholder="Descreva o ocorrido com a maior quantidade de detalhes possíveis (não digite o seu nome)."></textarea>
       </div>
 
       <div class="form-group">
-        <label for="idade">Idade</label>
-        <input type="number" class="form-control" id='idade' name="idade" placeholder="Digite a idade">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email"  placeholder="Digite o seu email.">
       </div>
 
-      <button type="submit" class="btn btn-primary">Enviar</button>
+      <button type="submit" class="btn btn-primary">Enviar denúncia</button>
       <a href="consulta.php" class="btn btn-danger">Cancelar</a>
 </form>
 
