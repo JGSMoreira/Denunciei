@@ -1,0 +1,55 @@
+body{
+  background-color: #202737;
+}
+
+.topo{
+  color: white;
+  background-color: #2B354E;
+  border-style: solid;
+  border-color: #F57C00;
+  border-width: 0px 0px 5px 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+}
+#nomesite{
+  text-transform: uppercase;
+}
+#frase{
+  margin-top: -15px;
+}
+
+.titulopage{
+  text-transform: uppercase;
+  text-align: left;
+  color: white;
+  border-style: solid;
+  border-color: #F57C00;
+  border-width: 0px 0px 0px 5px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 7.9%;
+  margin-right: 7.7%;
+  padding-left: 10px;
+}
+
+.centro{
+  background-color: white;
+  padding: 15px;
+}
+
+.buttonbar{
+  text-align: left;
+  color: white;
+  background-color: #2B354E;
+  border-style: solid;
+  border-color: #F57C00;
+  border-width: 0px 0px 0px 5px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 7.9%;
+  margin-right: 7.7%;
+  padding-left: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
