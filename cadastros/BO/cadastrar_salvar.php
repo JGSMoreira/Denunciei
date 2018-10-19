@@ -1,14 +1,16 @@
 <?php
-include '../conexao/conexao.php';
-if(empty($_GET['id'])){
+include '../../conexao/conexao.php';
+echo $_POST['id'];
+if(empty($_POST['id'])){
   header ('location.consultarid.php');
 }else{
-  $id = filter_var ($_GET['id']);
+  $id = filter_var ($POST['id']);
   $sql = "SELECT * FROM user where cod_user =:id";
   $consulta = $conn->prepare($sql);
   $consulta->bindParam(':id', $id);
   $consulta->execute();
   $registro = $consulta->fetch(PDO::FETCH_OBJ);
+}
 $nomev = $_POST ['nomevit'];
 $sobrenomev = $_POST ['sobrenomevit'];
 $idadev = $_POST ['idadevit'];
@@ -56,10 +58,4 @@ if( ! $resultado)
 }
 
 echo $inserir->rowCount(). "Boletim de Ocorrencia foi registrado com sucesso!!!";
-
-
  ?>
- <a href="cadastrar.php"class="btn btn-success">Registrar um Novo B.O</a>
-  <a href="../admin/admin.php"class="btn btn-primary">HOME</a>
-
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
