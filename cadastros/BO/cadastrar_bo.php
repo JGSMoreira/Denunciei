@@ -17,7 +17,7 @@ $titulo = "Cadastrar Boletim de Ocorrência";
    </head>
    <body>
 
-     <form method="post" action="cadastrar_salvar.php">
+     <form method="post" action="cadastrar_bo_salvar.php">
   <div class="form-group">
     <label for="nome">Nome</label>
     <input type="text" class="form-control" id='nome' name="nome"  placeholder="Digite o nome">
