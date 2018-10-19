@@ -89,14 +89,33 @@ $titulo = "Cadastrar Boletim de Ocorrência";
 
     </div>
 
-    <div class="form-group">
-      <p>
-      <h2>Descrição</h2></p>
-      <label for="descricao">Descrição do Caso</label>
-      <textarea rows="10" cols="204" class="form-group" name="descricao" placeholder="Informe a descrição do caso"></textarea>
+    <p>
+    <h2>Outras Informações</h2></p>
 
+    <div class="form-group">
+      <label for="dataacon">Data do Ocorrido</label>
+      <input type="date" class="form-control" name="dataacon" >
 
     </div>
+
+    <div class="form-group">
+       <label for="descricao">Descrição</label>
+       <textarea rows="10" cols="30" class="form-control" name="descricao"  placeholder="Descreva o ocorrido com a maior quantidade de detalhes possíveis."></textarea>
+    </div>
+
+    <div class="form-group">
+      <select class="form-control"name="motivo">
+        <option>Qual o motivo da denuncia?</option>
+        <option>Furto</option>
+        <option>Estupro</option>
+        <option>Roubo</option>
+        <option>Homicídeo</option>
+
+
+      </select>
+    </div>
+
+
 
 
 
