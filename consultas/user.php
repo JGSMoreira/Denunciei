@@ -1,14 +1,23 @@
 <?php
 //CONFIGURAÇÃO PADRÃO
-include '../../padroes/default.php';
+include '../padroes/default.php';
 
 //CONFIGURAÇÕES EDITÁVEIS
-$pagina = 'Cadastrar novo usuário'; //Nome da página
+$pagina = 'Consulta de usuários'; //Nome da página
 $metodo = 'post'; //Método de envio de formulário
-$acao = '..\..\admin\index.php'; //O que deve ser feito ao apertar o botão de envio
+$acao = '..\..\index.html'; //O que deve ser feito ao apertar o botão de envio
 $salvar = 'Ok, voltar ao início.'; //Texto do botão de envio
 $cancelar_acao = 'sucesso.php'; // O que deve ser feito ao apertar o botão de cancelamento
 //FIM DAS CONFIGURAÇÕES EDITÁVEIS
+
+//BANCO DE DADOS
+include '../conexao/conexao.php';
+
+$sql = "SELECT * FROM user;";
+$consulta = $conn->prepare($sql);
+$consulta->execute();
+
+$registros = $consulta->fetchAll(PDO:: FETCH_OBJ);
 
 // CONFIGURAÇÃO PADRÃO
 $title = $sistema.' - '.$pagina;
@@ -36,29 +45,35 @@ $title = $sistema.' - '.$pagina;
        <h2 class=""><?= $pagina ?></h2>
      </div>
 
-     <form method="<?= $metodo ?>" action="<?= $acao ?>">
        <div class="centro container">
 
          <!-- INÍCIO DA PARTE EDITÁVEL -->
-
-         <center>
-           <i class="fas fa-check fa-5x"></i>
-           <h1>USUÁRIO CADASTRADO COM SUCESSO!</h1>
-         </center>
-
+         <table class="table">
+           <thead>
+             <tr>
+               <th>Nome</th>
+               <th>E-mail</th>
+               <th>Opções</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($registros as $registro) { ?>
+            <tr>
+               <td><?php  echo $registro->nome_user; ?></td>
+               <td><?php  echo $registro->email_user; ?></td>
+               <td><a  href="../cadastros/user/deletar.php?id=<?php echo $registro->cod_user;?>" class="btn btn-danger">Excluir</a><a  href="../cadastros/user/atualizar_usuario.php?id=<?php echo $registro->cod_user;?>" class="btn btn-primary">Editar</a></td>
+           </tr>
+           <?php  }?>
         <!-- FIM DA PARTE EDITÁVEL -->
 
       </div>
       <div class="buttonbar">
-        <button type="submit" class="btn btn-primary"><?= $salvar ?></button>
-        <!-- <a href="<?= $cancelar_acao ?>" class="btn btn-danger">Cancelar</a> -->
+        <a href="../cadastros/bo/cadastrar.php" class="btn btn-primary">Registrar novo B.O.</a>
+        <a href="../admin/index.php" class="btn btn-primary">Voltar para o Dashboard</a>
       </div>
-    </form>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
    </body>
  </html>
-
- </a>

@@ -1,7 +1,7 @@
 <?php
-include '../conexao/conexao.php';
+include '../../conexao/conexao.php';
 if (empty($_GET['id'])) {
-  header('location:consulta.php');
+  header('location:../../consultas/user.php');
 }else{
 $id = filter_var($_GET['id']);
 /* criar codigo sql */
@@ -16,5 +16,5 @@ if (! $resultado) {
   exit;
 }
 echo $delete->rowCount(). " linha";
-header('Location:consulta.php');
+header('location:../../consultas/user.php');
 }
