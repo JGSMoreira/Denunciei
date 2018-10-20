@@ -1,5 +1,4 @@
 <?php
-include '../../conexao/conexao.php';
 $titulo = "Consultas de B.O";
 
 $sql = "SELECT * FROM bo;";
