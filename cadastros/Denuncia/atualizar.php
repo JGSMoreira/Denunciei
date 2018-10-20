@@ -78,19 +78,12 @@ $title = $sistema.' - '.$pagina;
 
          <div class="form-group">
            <label for="motivo">Motivo da denúncia</label>
-           <select class="form-control" name="motivo" value="<?php echo $registro->motivo_den; ?>">
-             <option>Selecione o motivo da denúncia</option>
-             <option>Furto</option>
-             <option>Estupro</option>
-             <option>Roubo</option>
-             <option>Homicídio</option>
-             <option>Outros</option>
-           </select>
+           <input type="text" class="form-control" name="motivo" value="<?php echo $registro->motivo_den; ?>">
          </div>
 
         <div class="form-group">
            <label for="descricao">Descrição</label>
-           <textarea rows="10" cols="30" class="form-control" name="descricao"  placeholder="Descreva o ocorrido com a maior quantidade de detalhes possíveis (não digite o seu nome)." value="<?php echo $registro->descricao_den; ?>"></textarea>
+           <textarea rows="10" cols="30" class="form-control" name="descricao"  placeholder="Descreva o ocorrido com a maior quantidade de detalhes possíveis (não digite o seu nome)."><?php echo $registro->descricao_den; ?></textarea>
         </div>
 
         <h2>Contato</h2>

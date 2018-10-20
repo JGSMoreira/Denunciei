@@ -133,19 +133,13 @@ if(empty($_GET['id'])){
 
           <div class="form-group">
             <label for="motivo">Motivo da denúncia</label>
-            <select class="form-control" name="motivo" value="<?php echo $registro->assuntoOcorrido_bo; ?>">
-              <option>Selecione o motivo da denúncia</option>
-              <option>Furto</option>
-              <option>Estupro</option>
-              <option>Roubo</option>
-              <option>Homicídio</option>
-              <option>Outros</option>
-            </select>
+            <input type="text" class="form-control" name="motivo" value="<?php echo $registro->assuntoOcorrido_bo; ?>">
+
           </div>
 
           <div class="form-group">
             <label for="descricao">Descrição do caso </label>
-            <textarea rows="10" cols="30" class="form-control" name="descricao" placeholder="Informe a descrição do caso." value="<?php echo $registro->descricaoOcorrido_bo; ?>"></textarea>
+            <textarea rows="10" cols="30" class="form-control" name="descricao" placeholder="Informe a descrição do caso."><?php echo $registro->descricaoOcorrido_bo; ?></textarea>
           </div>
 
 
