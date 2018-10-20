@@ -14,10 +14,10 @@ create table bo(
 
   nomeVitima_bo varchar(100) not null,
   sobrenomeVitima_bo varchar(200) not null,
-  idadeVitima_bo int,
+  idadeVitima_bo int not null,
   enderecoVitima_bo varchar(400) not null,
   telefoneVitima_bo varchar(50) not null,
-  profissaoVitima_bo varchar(100),
+  profissaoVitima_bo varchar(100) not null,
 
   nomeSuspeito_bo varchar(100),
   sobrenomeSuspeito_bo varchar(200),
@@ -26,23 +26,17 @@ create table bo(
   telefoneSuspeito_bo varchar(50),
 
   dataOcorrido_bo date not null,
-  descricaoOcorrido_bo varchar(500000) not null,
+  descricaoOcorrido_bo varchar(3000) not null,
   assuntoOcorrido_bo varchar(200) not null,
 
-<<<<<<< HEAD
   cod_user int not null,
   foreign key (cod_user) references User(cod_user)
-=======
-
->>>>>>> dd3371eb149d3bb5d14b79523895ad3bf25e3f5c
 );
 
 create table denuncia(
   cod_den int primary key auto_increment,
   titulo_den varchar(300) not null,
-  suspeito_den varchar (1000),
-  data_den timestamp not null,
-  descricao_den varchar(500000) not null,
-  email_den varchar(300),
+  email_den varchar(300) not null,
+  descricao_den varchar(3000) not null,
   assunto_den varchar(200) not null
 );
