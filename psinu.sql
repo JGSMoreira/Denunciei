@@ -8,7 +8,7 @@ nome_user varchar (300) not null,
 email_user varchar(300) not null,
 pass_user varchar (300) not null
 );
-insert into user values (null,'admin','admin@localhost.com','root');
+insert into user values (null,'Administrador','admin@localhost.com','root');
 
 create table bo(
   cod_bo int primary key auto_increment,

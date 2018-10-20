@@ -10,7 +10,7 @@ else{
   include('../conexao/conexao.php');
 
   // buscar no BD os dados
-  $sql= "SELECT * FROM user where nome_user = :user and pass_user = :senha";
+  $sql= "SELECT * FROM user where email_user = :user and pass_user = :senha";
   $consulta = $conn->prepare($sql);
   $consulta->bindParam(':user', $usuario);
   $consulta->bindParam(':senha', $senha);
