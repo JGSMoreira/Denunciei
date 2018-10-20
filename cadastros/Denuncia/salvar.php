@@ -1,20 +1,20 @@
 <?php
 include '../conexao/conexao.php';
 $titulo = $_POST['titulo'];
-$suspeito = $_POST['suspeito'];
+$email = $_POST['suspeito'];
 $data = $_POST['data'];
 $descricao = $_POST['descricao'];
 $email = $_POST['email'];
 
 // Criar código sql
 
-$sql = "INSERT INTO pessoa (nome_pes,sobrenome_pes, email_pes, idade_pes) values (:nome, :sobrenome, :email, :idade)";
+$sql = "INSERT INTO denuncia (titulo_den, suspeito_den, data_den, descricao_den,email_den, assunto_den) values (:titulo, :suspeito, :datad, :descricao, :email, :assunto)";
 
 $inserir = $conn->prepare($sql);
-$inserir-> bindParam (':nome', $nome);
-$inserir-> bindParam (':sobrenome', $sobrenome);
+$inserir-> bindParam (':titulo', $titulo);
 $inserir-> bindParam (':email', $email);
-$inserir-> bindParam (':idade', $idade);
+$inserir-> bindParam (':descricao', $descricao);
+$inserir-> bindParam (':assunto', $assunto);
 
 $resultado = $inserir->execute();
 
