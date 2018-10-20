@@ -27,20 +27,11 @@ create table bo(
   telefoneSuspeito_bo varchar(50),
 
   dataOcorrido_bo date not null,
-  descricaoOcorrido_bo varchar(500000) not null,
+  descricaoOcorrido_bo varchar(8000) not null,
   assuntoOcorrido_bo varchar(200) not null,
 
-<<<<<<< HEAD
-<<<<<<< HEAD
   cod_user int not null,
   foreign key (cod_user) references User(cod_user)
-=======
-
->>>>>>> dd3371eb149d3bb5d14b79523895ad3bf25e3f5c
-=======
-  cod_user int not null,
-  foreign key (cod_user) references User(cod_user)
->>>>>>> a0029865a59fd4743e304d708e9fb53cdc6e2dd3
 );
 
 create table denuncia(
