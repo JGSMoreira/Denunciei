@@ -1,13 +1,13 @@
 <?php
 //CONFIGURAÇÃO PADRÃO
-include '../padroes/default.php';
+include '../../padroes/default.php';
 
 //CONFIGURAÇÕES EDITÁVEIS
-$pagina = 'Login'; //Nome da página
+$pagina = 'Cadastrar novo usuário'; //Nome da página
 $metodo = 'post'; //Método de envio de formulário
-$acao = '../admin/autenticar.php'; //O que deve ser feito ao apertar o botão de envio
-$salvar = 'Logar'; //Texto do botão de envio
-$cancelar_acao = '../index.php'; // O que deve ser feito ao apertar o botão de cancelamento
+$acao = '..\..\admin\index.html'; //O que deve ser feito ao apertar o botão de envio
+$salvar = 'Ok, voltar ao início.'; //Texto do botão de envio
+$cancelar_acao = 'sucesso.php'; // O que deve ser feito ao apertar o botão de cancelamento
 //FIM DAS CONFIGURAÇÕES EDITÁVEIS
 
 // CONFIGURAÇÃO PADRÃO
@@ -40,30 +40,18 @@ $title = $sistema.' - '.$pagina;
        <div class="centro container">
 
          <!-- INÍCIO DA PARTE EDITÁVEL -->
-         <div class="form-group" >
-           <label for="user">Email</label>
-           <input type="email" class="form-control" name="user" placeholder="Digite seu email." required>
-         </div>
 
-         <div class="form-group">
-           <label for="senha">Senha</label>
-           <input type="password" class="form-control" name="senha" placeholder="Digite sua senha." required>
-         </div>
-
-         <?php
-           if(isset($_GET["error"])) {
-             echo '<div class="alert alert-danger" role="alert">';
-             echo $_GET["error"];
-             echo '</div>';
-           }
-          ?>
+         <center>
+           <i class="fas fa-check fa-5x"></i>
+           <h1>USUÁRIO CADASTRADO COM SUCESSO!</h1>
+         </center>
 
         <!-- FIM DA PARTE EDITÁVEL -->
 
       </div>
       <div class="buttonbar">
         <button type="submit" class="btn btn-primary"><?= $salvar ?></button>
-        <a href="<?= $cancelar_acao ?>" class="btn btn-danger">Voltar ao início.</a>
+        <!-- <a href="<?= $cancelar_acao ?>" class="btn btn-danger">Cancelar</a> -->
       </div>
     </form>
 
@@ -72,3 +60,5 @@ $title = $sistema.' - '.$pagina;
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
    </body>
  </html>
+
+ </a>

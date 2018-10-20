@@ -1,14 +1,23 @@
 <?php
-//CONFIGURAÇÃO PADRÃO
+//CONFIGURAÇÃO PADRÃO 
 include '../padroes/default.php';
 
 //CONFIGURAÇÕES EDITÁVEIS
-$pagina = 'Login'; //Nome da página
+$pagina = 'Consulta de Boletins de Ocorrência'; //Nome da página
 $metodo = 'post'; //Método de envio de formulário
-$acao = '../admin/autenticar.php'; //O que deve ser feito ao apertar o botão de envio
-$salvar = 'Logar'; //Texto do botão de envio
-$cancelar_acao = '../index.php'; // O que deve ser feito ao apertar o botão de cancelamento
+$acao = '..\..\index.html'; //O que deve ser feito ao apertar o botão de envio
+$salvar = 'Ok, voltar ao início.'; //Texto do botão de envio
+$cancelar_acao = 'sucesso.php'; // O que deve ser feito ao apertar o botão de cancelamento
 //FIM DAS CONFIGURAÇÕES EDITÁVEIS
+
+//BANCO DE DADOS
+include '../conexao/conexao.php';
+
+$sql = "SELECT * FROM bo;";
+$consulta = $conn->prepare($sql);
+$consulta->execute();
+
+$registros = $consulta->fetchAll(PDO:: FETCH_OBJ);
 
 // CONFIGURAÇÃO PADRÃO
 $title = $sistema.' - '.$pagina;
@@ -36,36 +45,38 @@ $title = $sistema.' - '.$pagina;
        <h2 class=""><?= $pagina ?></h2>
      </div>
 
-     <form method="<?= $metodo ?>" action="<?= $acao ?>">
        <div class="centro container">
 
          <!-- INÍCIO DA PARTE EDITÁVEL -->
-         <div class="form-group" >
-           <label for="user">Email</label>
-           <input type="email" class="form-control" name="user" placeholder="Digite seu email." required>
-         </div>
-
-         <div class="form-group">
-           <label for="senha">Senha</label>
-           <input type="password" class="form-control" name="senha" placeholder="Digite sua senha." required>
-         </div>
-
-         <?php
-           if(isset($_GET["error"])) {
-             echo '<div class="alert alert-danger" role="alert">';
-             echo $_GET["error"];
-             echo '</div>';
-           }
-          ?>
-
+         <table class="table">
+           <thead>
+             <tr>
+               <th>Vítima</th>
+               <th>Aniversário</th>
+               <th>Suspeito</th>
+               <th>Data da Ocorrência</th>
+               <th>Motivo da Denúncia</th>
+               <th>Opções</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($registros as $registro) { ?>
+            <tr>
+               <td><?php  echo $registro->nomeVitima_bo." ".$registro->sobrenomeVitima_bo; ?></td>
+               <td><?php  echo $registro->idadeVitima_bo; ?></td>
+               <td><?php  echo $registro->nomeSuspeito_bo." ".$registro->sobrenomeSuspeito_bo; ?></td>
+               <td><?php  echo $registro->dataOcorrido_bo; ?></td>
+               <td><?php  echo $registro->assuntoOcorrido_bo; ?></td>
+               <td><a  href="deletar.php?id=<?php echo $registro->cod_bo;?>" class="btn btn-danger">Excluir</a></td>
+           </tr>
+           <?php  }?>
         <!-- FIM DA PARTE EDITÁVEL -->
 
       </div>
       <div class="buttonbar">
-        <button type="submit" class="btn btn-primary"><?= $salvar ?></button>
-        <a href="<?= $cancelar_acao ?>" class="btn btn-danger">Voltar ao início.</a>
+        <a href="../cadastros/bo/cadastrar.php" class="btn btn-primary">Registrar novo B.O.</a>
+        <a href="../admin/index.php" class="btn btn-primary">Voltar para o Dashboard</a>
       </div>
-    </form>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

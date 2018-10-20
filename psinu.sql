@@ -4,10 +4,11 @@ use psinu;
 
 create table user(
 cod_user int primary key auto_increment,
-nome_user varchar (200) not null,
+nome_user varchar (300) not null,
+email_user varchar(300) not null,
 pass_user varchar (300) not null
 );
-insert into user values (null, 'admin@gmail.com','root');
+insert into user values (null,'admin','admin@localhost','root');
 
 create table bo(
   cod_bo int primary key auto_increment,
@@ -26,11 +27,23 @@ create table bo(
   telefoneSuspeito_bo varchar(50),
 
   dataOcorrido_bo date not null,
+<<<<<<< HEAD
   descricaoOcorrido_bo varchar(3000) not null,
+=======
+<<<<<<< HEAD
+  descricaoOcorrido_bo varchar(8000) not null,
+>>>>>>> 2960a71794bf69c947ba55eef5e0730f778ffb62
   assuntoOcorrido_bo varchar(200) not null,
 
   cod_user int not null,
   foreign key (cod_user) references User(cod_user)
+<<<<<<< HEAD
+=======
+=======
+  descricaoOcorrido_bo varchar(500000) not null,
+  assuntoOcorrido_bo varchar(200) not null
+>>>>>>> 8eae64b92ba01436ef622e633f4a08ce3712d1cf
+>>>>>>> 2960a71794bf69c947ba55eef5e0730f778ffb62
 );
 
 create table denuncia(
