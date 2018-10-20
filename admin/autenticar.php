@@ -10,7 +10,7 @@ else{
   include('../conexao/conexao.php');
 
   // buscar no BD os dados
-  $sql= "SELECT * FROM user where nome_user = :user and pass_user = :senha";
+  $sql= "SELECT * FROM user where email_user = :user and pass_user = :senha";
   $consulta = $conn->prepare($sql);
   $consulta->bindParam(':user', $usuario);
   $consulta->bindParam(':senha', $senha);
@@ -18,7 +18,7 @@ else{
   $registro = $consulta->fetch(PDO::FETCH_OBJ);
 
 
-  if ($usuario == $registro->nome_user && $senha == $registro->pass_user) {
+  if ($usuario == $registro->email_user && $senha == $registro->pass_user) {
     $_SESSION["logado"] = true;
     $_SESSION["usuario_nome"] = $registro->nome_user;
 
