@@ -1,21 +1,14 @@
 <?php
 //CONFIGURAÇÃO PADRÃO
 include '../../padroes/default.php';
-include '../../conexao/conexao.php';
-//CONFIGURAÇÕES EDITÁVEIS
-$pagina = 'Atualizar usuário'; //Nome da página
-$metodo = 'post'; //Método de envio de formulário
-$acao = 'atualizar_usuario_salvar.php'; //O que deve ser feito ao apertar o botão de envio
-$salvar = 'Atualizar usuário.'; //Texto do botão de envio
-$cancelar_acao = '..\..\admin.php'; // O que deve ser feito ao apertar o botão de cancelamento
-//FIM DAS CONFIGURAÇÕES EDITÁVEIS
-$id = $_GET['id'];
-$sql = "SELECT * FROM user WHERE cod_user = :id;";
-$consulta = $conn->prepare($sql);
-$consulta->bindParam (':id', $id);
-$consulta->execute();
 
-$registro = $consulta->fetch(PDO:: FETCH_OBJ);
+//CONFIGURAÇÕES EDITÁVEIS
+$pagina = 'Erro ao cadastrar'; //Nome da página
+$metodo = 'post'; //Método de envio de formulário
+$acao = 'usuario.php'; //O que deve ser feito ao apertar o botão de envio
+$salvar = 'Ok, tentar novamente.'; //Texto do botão de envio
+$cancelar_acao = '../../admin/index.php'; // O que deve ser feito ao apertar o botão de cancelamento
+//FIM DAS CONFIGURAÇÕES EDITÁVEIS
 
 // CONFIGURAÇÃO PADRÃO
 $title = $sistema.' - '.$pagina;
@@ -28,6 +21,7 @@ $title = $sistema.' - '.$pagina;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/master.css">
 
      <title><?= $title ?></title>
@@ -47,46 +41,24 @@ $title = $sistema.' - '.$pagina;
 
          <!-- INÍCIO DA PARTE EDITÁVEL -->
 
-         <h2 style="margin-top: 2px">Dados do usuário</h2>
-
-         <div class="form-group">
-           <input type="hidden" name="id" value="<?php echo $id ?>">
-           <label for="nome">Nome</label>
-           <input type="text" class="form-control" name="nome" placeholder="Digite o nome do usuário." value="<?php echo $registro->nome_user; ?>">
-         </div>
-
-         <div class="form-group">
-           <label for="email">E-mail</label>
-           <input type="email" class="form-control" name="email" placeholder="Digite o e-mail do usuário." value="<?php echo $registro->email_user; ?>">
-         </div>
-
-         <h2>Nova senha</h2>
-
-         <div class="form-group">
-           <label for="senha">Senha</label>
-           <input type="password" class="form-control" name="senha" placeholder="Digite a nova senha.">
-         </div>
-
-
-         <div class="form-group">
-           <label for="confirm-senha">Confirmar senha</label>
-           <input type="password" class="form-control" name="confirm-senha" placeholder="Confirme a nova senha.">
-         </div>
-
+         <center>
+           <i class="fas fa-ban fa-5x"></i>
+           <h1>ERRO AO CADASTRAR USUÁRIO!</h1>
+         </center>
 
         <!-- FIM DA PARTE EDITÁVEL -->
 
       </div>
       <div class="buttonbar">
         <button type="submit" class="btn btn-primary"><?= $salvar ?></button>
-        <a href="<?= $cancelar_acao ?>" class="btn btn-danger">Cancelar</a>
+        <!-- <a href="<?= $cancelar_acao ?>" class="btn btn-danger">Cancelar</a> -->
       </div>
     </form>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <!--<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-    <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script> -->
    </body>
  </html>
+
+ </a>

@@ -1,5 +1,5 @@
 <?php
-include '../conexao/conexao.php';
+include '../../conexao/conexao.php';
 
 $nome_user = $_POST['nome'];
 $email_user = $_POST['email'];
@@ -22,6 +22,9 @@ if ($pass_user==$pass_user_c) {
   }
 
   echo $inserir->rowCount(). "linhas";
+  header('location:sucesso.php');
 }
-header('location:sucesso.php');
+else{
+  header('location:falha.php');
+}
 ?>

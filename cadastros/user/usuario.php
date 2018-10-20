@@ -62,7 +62,7 @@
 
           <div class="form-group">
             <label for="confirm-senha">Confirmar senha</label>
-            <input type="password" class="form-control" name="descricao" placeholder="Confirme a senha.">
+            <input type="password" class="form-control" name="confirm-senha" placeholder="Confirme a senha.">
           </div>
 
 

@@ -1,27 +1,30 @@
 <?php
-include '../conexao/conexao.php';
-$cod_user= $_POST['cod_user'];
-$nome_user= $_POST['username'];
-$pass_user= $_POST['password'];
-$pass_confirm= $_POST['confirm-password'];
+include '../../conexao/conexao.php';
+$id = $_GET['id'];
+$nome_user = $_POST['nome'];
+$email_user = $_POST['email'];
+$pass_user = $_POST['senha'];
+$pass_user_c = $_POST['confirm-senha'];
 
-// Criar código sql
-if ($pass_user==$pass_confirm) {
-  // code...
-$sql = "UPDATE user SET nome_user =:nome, pass_user = :pass where cod_user = :cod_user;";
+if ($pass_user==$pass_user_c) {
+  $sql = "UPDATE user SET nome_user = :nome, email_user = :email, pass_user = :senha WHERE cod_user = :id";
 
-$update = $conn->prepare($sql);
-$update-> bindParam (':cod_user', $cod_user);
-$update-> bindParam (':pass', $pass_user);
+  $inserir = $conn->prepare($sql);
+  $inserir->bindParam (":nome", $nome_user);
+  $inserir->bindParam (":email", $email_user);
+  $inserir->bindParam (":senha", $pass_user);
+  $inserir->bindParam (":id", $id);
 
-$resultado = $update->execute();
+  $resultado = $inserir->execute();
 
-if( ! $resultado)
-{
-  var_dump( $update->errorInfo() );
-  exit;
+  if( ! $resultado){
+    var_dump( $inserir->errorInfo() );
+    exit;
+    header('location:falha.php');
+  }
+  header('location:sucesso.php');
 }
-
-echo $update->rowCount(). "linha";}
-  header ('location:consulta.php');
- ?>
+else{
+  header('location:falha.php');
+}
+?>
