@@ -56,14 +56,14 @@ $title = $sistema.' - '.$pagina;
          <a href="../cadastros/denuncia/cadastrar.php" class="container-fluid btn btn-primary"><i class="fas fa-pencil-alt"></i> Cadastrar Denúncia</a>
        </div>
        <div class="container" style="margin-top: 5px; margin-bottom: 5px">
-         <a href="#" class="container-fluid btn btn-primary"><i class="fas fa-eye"></i> Visualizar Denúncias</a>
+         <a href="../consultas/denuncias.php" class="container-fluid btn btn-primary"><i class="fas fa-eye"></i> Visualizar Denúncias</a>
        </div>
        <hr>
        <div class="container" style="margin-top: 5px; margin-bottom: 5px">
          <a href="../cadastros/bo/cadastrar.php" class="container-fluid btn btn-primary"><i class="fas fa-pencil-alt"></i> Registrar Boletim de Ocorrência</a>
        </div>
        <div class="container" style="margin-top: 5px; margin-bottom: 5px">
-         <a href="#" class="container-fluid btn btn-primary"><i class="fas fa-scroll"></i> Visualizar Boletins de Ocorrência</a>
+         <a href="../consultas/bo.php" class="container-fluid btn btn-primary"><i class="fas fa-scroll"></i> Visualizar Boletins de Ocorrência</a>
        </div>
        <hr>
        <div class="container" style="margin-top: 5px; margin-bottom: 5px">
