@@ -2,6 +2,14 @@
 //CONFIGURAÇÃO PADRÃO
 include '../padroes/default.php';
 
+//SESSÃO
+session_start();
+if (isset($_SESSION["logado"]) && $_SESSION["logado"]) {
+  $logado = true;
+  header('location:../admin/index.php');
+}
+
+
 //CONFIGURAÇÕES EDITÁVEIS
 $pagina = 'Login'; //Nome da página
 $metodo = 'post'; //Método de envio de formulário
