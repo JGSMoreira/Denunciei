@@ -65,3 +65,9 @@ body{
   margin-bottom:10px;
   padding-left: 10px;
 }
+
+.form-group span{
+  color: #323132;
+  font-style:italic;
+  font-size: 12px;
+}
