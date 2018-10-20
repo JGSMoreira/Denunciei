@@ -49,24 +49,23 @@ $title = $sistema.' - '.$pagina;
            <p><i>Exibição das áreas de risco.</i></p>
 
            <!-- INÍCIO DA PARTE EDITÁVEL -->
-           <div class="" style="height: 400px; width: 400px;" id="mapContainer">
-             <script>
-               var platform = new H.service.Platform({
-               'app_id': 'gIdxnyGc11LuwKfIqgmB',
-               'app_code': 'pwuVf7dDzSKVBhD9TnvDA'
-               });
+           <div class="" style="height: 400px; width: 500px;" id="mapContainer"></div>
+           <script>
+            var platform = new H.service.Platform({
+            'app_id': 'gIdxnyGc11LuwKfIqgmB',
+            'app_code': 'pwuVf7dDzSKVBhD9TnvDA'
+            });
 
-               var maptypes = platform.createDefaultLayers();
+            var maptypes = platform.createDefaultLayers();
 
-               var map = new H.Map(
-               document.getElementById('mapContainer'),
-               maptypes.normal.map,
-               {
-                 zoom: 10,
-                 center: { lng: -61.969256, lat: -10.881893}
-               });
-           </script>
-          </div>
+            var map = new H.Map(
+            document.getElementById('mapContainer'),
+            maptypes.normal.map,
+            {
+              zoom: 10,
+              center: { lng: 13.4, lat: 52.51}
+            });
+        </script>
           <!-- FIM DA PARTE EDITÁVEL -->
 
          </div>
@@ -76,7 +75,6 @@ $title = $sistema.' - '.$pagina;
            <p><i>Número de incidentes registrados.</i></p>
 
            <!-- INÍCIO DA PARTE EDITÁVEL -->
-           <h3>Estupros: 0</h3>
            <h3>Furtos: 0</h3>
            <h3>Homicidios: 0</h3>
            <h3>Roubos: 0</h3>
