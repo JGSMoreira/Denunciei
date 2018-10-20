@@ -48,7 +48,7 @@ $title = $sistema.' - '.$pagina;
            <p><i>Exibição das áreas de risco.</i></p>
 
            <!-- INÍCIO DA PARTE EDITÁVEL -->
-           <div class="" style="height: 400px; width: 500px;" id="mapContainer"></div>
+           <div class="" style="height: 250px; width: 100%" id="mapContainer"></div>
            <script>
             var platform = new H.service.Platform({
             'app_id': 'gIdxnyGc11LuwKfIqgmB',
