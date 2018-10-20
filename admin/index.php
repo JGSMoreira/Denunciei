@@ -2,6 +2,15 @@
 //CONFIGURAÇÃO PADRÃO
 include '../padroes/default.php';
 
+//SESSÃO
+session_start();
+if (isset($_SESSION["logado"]) && $_SESSION["logado"]) {
+  $logado = true;
+}
+else{
+  header('location:../nao_logado.php');
+}
+
 //CONFIGURAÇÕES EDITÁVEIS
 $pagina = 'Dashboard'; //Nome da página
 $metodo = 'post'; //Método de envio de formulário
@@ -40,7 +49,7 @@ $title = $sistema.' - '.$pagina;
 
        <!-- INÍCIO DA PARTE EDITÁVEL -->
 
-       <h2 style="margin-top: 5px">Bem-Vindo, user.</h2>
+       <h2 style="margin-top: 5px">Bem-Vindo, <?= $_SESSION["usuario_nome"] ?>.</h2>
        <p style="margin-top: -10px"><i>Veja as opções disponíveis:</i></p>
 
        <div class="container" style="margin-top: 5px; margin-bottom: 5px">
@@ -52,6 +61,13 @@ $title = $sistema.' - '.$pagina;
        <div class="container" style="margin-top: 5px; margin-bottom: 5px">
          <a href="#" class="container-fluid btn btn-primary"><i class="fas fa-pencil-alt"></i> Registrar Boletim de Ocorrência</a>
        </div>
+       <hr>
+       <div class="container" style="margin-top: 5px; margin-bottom: 5px">
+         <a href="#" class="container-fluid btn btn-primary"><i class="fas fa-sign-out-alt"></i> Sair</a>
+       </div>
+
+       <h2>Estátisticas</h2>
+       <center><i>Nenhum dado registrado.</i></center>
 
       <!-- FIM DA PARTE EDITÁVEL -->
 

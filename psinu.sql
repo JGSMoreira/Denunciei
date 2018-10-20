@@ -5,9 +5,9 @@ use psinu;
 create table user(
 cod_user int primary key auto_increment,
 nome_user varchar (200) not null,
-pass_user varchar (300) not null,
+pass_user varchar (300) not null
 );
-insert into user values ('admin','root');
+insert into user values (null, 'admin@gmail.com','root');
 
 create table bo(
   cod_bo int primary key auto_increment,
@@ -23,7 +23,7 @@ create table bo(
   sobrenomeSuspeito_bo varchar(200),
   idadeSuspeito_bo int,
   enderecoSuspeito_bo varchar(400),
-  telefoneSuspeito_bo varchar(50)
+  telefoneSuspeito_bo varchar(50),
 
   dataOcorrido_bo date not null,
   descricaoOcorrido_bo varchar(3000) not null,
@@ -31,8 +31,7 @@ create table bo(
 
   cod_user int not null,
   foreign key (cod_user) references User(cod_user)
-  on delete restrict on delete cascade
-)
+);
 
 create table denuncia(
   cod_den int primary key auto_increment,
@@ -40,4 +39,4 @@ create table denuncia(
   email_den varchar(300) not null,
   descricao_den varchar(3000) not null,
   assunto_den varchar(200) not null
-)
+);
