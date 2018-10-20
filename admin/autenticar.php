@@ -18,7 +18,7 @@ else{
   $registro = $consulta->fetch(PDO::FETCH_OBJ);
 
 
-  if ($usuario == $registro->nome_user && $senha == $registro->pass_user) {
+  if ($usuario == $registro->email_user && $senha == $registro->pass_user) {
     $_SESSION["logado"] = true;
     $_SESSION["usuario_nome"] = $registro->nome_user;
 
