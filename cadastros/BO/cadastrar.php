@@ -8,7 +8,7 @@ if (isset($_SESSION["logado"]) && $_SESSION["logado"]) {
   $logado = true;
 }
 else{
-  header('location:../nao_logado.php');
+  header('location:../../nao_logado.php');
 }
 
 //CONFIGURAÇÕES EDITÁVEIS
@@ -16,7 +16,7 @@ $pagina = 'Registrar Boletim de Ocorrência'; //Nome da página
 $metodo = 'post'; //Método de envio de formulário
 $acao = 'cadastrar_salvar.php'; //O que deve ser feito ao apertar o botão de envio
 $salvar = 'Registrar B.O.'; //Texto do botão de envio
-$cancelar_acao = '..\..\admin.php'; // O que deve ser feito ao apertar o botão de cancelamento
+$cancelar_acao = '../../admin/index.php'; // O que deve ser feito ao apertar o botão de cancelamento
 //FIM DAS CONFIGURAÇÕES EDITÁVEIS
 
 // CONFIGURAÇÃO PADRÃO
