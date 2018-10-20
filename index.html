@@ -2,14 +2,16 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>taINSHOCK</title>
+    <title>Denunciei</title>
     <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="css/home.css">
   </head>
   <body>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <div align="right">
     <div class="ui menu">
       <div class="header item">
-        taINSHOCK
+        Denunciei
       </div>
       <a class="item">
         About Us
@@ -23,7 +25,7 @@
     <div class="ui fluid container topo">
       </div>
       <center>
-        <h1 class="ui inverted header"><span class="library">taINSHOCK</span></h1>
+        <h1 class="ui inverted header"><span class="library">Denunciei</span></h1>
       </center>
     </div>
   </body>
