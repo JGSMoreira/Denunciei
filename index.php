@@ -1,27 +1,18 @@
 <?php
 //CONFIGURAÇÃO PADRÃO
-include '../padroes/default.php';
-
-//SESSÃO
-session_start();
-if (isset($_SESSION["logado"]) && $_SESSION["logado"]) {
-  $logado = true;
-}
-else{
-  header('location:../nao_logado.php');
-}
+include 'padroes/default.php';
 
 //CONFIGURAÇÕES EDITÁVEIS
-$pagina = 'Dashboard'; //Nome da página
+$pagina = 'Início'; //Nome da página
 $metodo = 'post'; //Método de envio de formulário
-$acao = '..\..\index.html'; //O que deve ser feito ao apertar o botão de envio
-$salvar = 'Ok, voltar ao início.'; //Texto do botão de envio
+$acao = 'log/login.php'; //O que deve ser feito ao apertar o botão de envio
+$salvar = 'Acessar Painel'; //Texto do botão de envio
 $cancelar_acao = 'sucesso.php'; // O que deve ser feito ao apertar o botão de cancelamento
 //FIM DAS CONFIGURAÇÕES EDITÁVEIS
 
 // CONFIGURAÇÃO PADRÃO
 $title = $sistema.' - '.$pagina;
- ?>
+?>
 
  <!DOCTYPE html>
  <html lang="en" dir="ltr">
@@ -47,34 +38,38 @@ $title = $sistema.' - '.$pagina;
 
      <div class="centro container">
 
-       <!-- INÍCIO DA PARTE EDITÁVEL -->
+       <div class="row">
 
-       <h2 style="margin-top: 5px">Bem-Vindo, <?= $_SESSION["usuario_nome"] ?>.</h2>
-       <p style="margin-top: -10px"><i>Veja as opções disponíveis:</i></p>
+         <div class="col">
+           <h2><i class="fas fa-map"></i> MAPA DE CRIMES</h2>
 
-       <div class="container" style="margin-top: 5px; margin-bottom: 5px">
-         <a href="../cadastros/denuncia/cadastrar.php" class="container-fluid btn btn-primary"><i class="fas fa-pencil-alt"></i> Cadastrar Denúncia</a>
-       </div>
-       <div class="container" style="margin-top: 5px; margin-bottom: 5px">
-         <a href="#" class="container-fluid btn btn-primary"><i class="fas fa-eye"></i> Visualizar Denúncias</a>
-       </div>
-       <hr>
-       <div class="container" style="margin-top: 5px; margin-bottom: 5px">
-         <a href="../cadastros/bo/cadastrar.php" class="container-fluid btn btn-primary"><i class="fas fa-pencil-alt"></i> Registrar Boletim de Ocorrência</a>
-       </div>
-       <div class="container" style="margin-top: 5px; margin-bottom: 5px">
-         <a href="#" class="container-fluid btn btn-primary"><i class="fas fa-scroll"></i> Visualizar Boletins de Ocorrência</a>
-       </div>
-       <hr>
-       <div class="container" style="margin-top: 5px; margin-bottom: 5px">
-         <a href="../log/logout.php" class="container-fluid btn btn-primary"><i class="fas fa-sign-out-alt"></i> Sair</a>
-       </div>
+           <!-- INÍCIO DA PARTE EDITÁVEL -->
+           <center><i>Em breve.</i></center>
+          <!-- FIM DA PARTE EDITÁVEL -->
 
-       <h2>Estátisticas</h2>
-       <center><i>Nenhum dado registrado.</i></center>
+         </div>
 
-      <!-- FIM DA PARTE EDITÁVEL -->
+         <div class="col">
+           <h2><i class="fas fa-chart-line"></i> Estátisticas</h2>
 
+           <!-- INÍCIO DA PARTE EDITÁVEL -->
+           <center><i>Nenhum dado registrado.</i></center>
+           <h3>Estupros:</h3>
+           <h3>Furtos:</h3>
+           <h3>Homicidios:</h3>
+           <h3>Roubos:</h3>
+           <h3>Outros:</h3>
+           <hr>
+           <h3>TOTAL:</h3>
+           <!-- FIM DA PARTE EDITÁVEL -->
+
+         </div>
+
+       </div>
+    </div>
+
+    <div class="buttonbar" style="padding-bottom: -5px;">
+      <a href="<?= $acao ?>"><i class="fas fa-shield-alt"></i> <i>Adminstração</i></a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

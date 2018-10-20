@@ -1,4 +1,4 @@
 <?php
 $sistema = 'Denunciei';
-$frase = 'frase de efeito.';
+$frase = 'Unidade Integrada de Segurança Pública - Ji-Paraná';
  ?>

@@ -4,11 +4,18 @@ use psinu;
 
 create table user(
 cod_user int primary key auto_increment,
+<<<<<<< HEAD
 nome_user varchar (300) not null,
 email_user varchar(300) not null,
 pass_user varchar (300) not null
 );
 insert into user values (null,'admin','admin@localhost','root');
+=======
+nome_user varchar (200) not null,
+pass_user varchar (300) not null
+);
+insert into user values (null, 'admin@gmail.com','root');
+>>>>>>> 034f1e8144b8bda7cceb5234741a9718061c388c
 
 create table bo(
   cod_bo int primary key auto_increment,
@@ -30,7 +37,12 @@ create table bo(
   descricaoOcorrido_bo varchar(500000) not null,
   assuntoOcorrido_bo varchar(200) not null,
 
+<<<<<<< HEAD
 
+=======
+  cod_user int not null,
+  foreign key (cod_user) references User(cod_user)
+>>>>>>> 034f1e8144b8bda7cceb5234741a9718061c388c
 );
 
 create table denuncia(
