@@ -111,6 +111,11 @@ $title = $sistema.' - '.$pagina;
          <h2>Descrição</h2>
 
          <div class="form-group">
+           <label for="dataacon">Data da Ocorrência</label>
+           <input type="date" class="form-control" name="dataacon">
+         </div>
+
+         <div class="form-group">
            <label for="motivo">Motivo da denúncia</label>
            <select class="form-control" name="motivo">
              <option>Selecione o motivo da denúncia</option>
