@@ -70,7 +70,7 @@ $title = $sistema.' - '.$pagina;
 
       </div>
       <div class="buttonbar">
-        <button type="submit" class="btn btn-primary"><?= $salvar ?></button>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> <?= $salvar ?></button>
         <a href="<?= $cancelar_acao ?>" class="btn btn-danger">Voltar ao início.</a>
       </div>
     </form>

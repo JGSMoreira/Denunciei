@@ -52,7 +52,7 @@ $title = $sistema.' - '.$pagina;
            <thead>
              <tr>
                <th>Denuncia</th>
-               <th>assunto</th>
+               <th>Assunto</th>
                 <th>Opções</th>
             </tr>
           </thead>
