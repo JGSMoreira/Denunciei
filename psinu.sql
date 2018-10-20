@@ -4,10 +4,11 @@ use psinu;
 
 create table user(
 cod_user int primary key auto_increment,
-nome_user varchar (200) not null,
-pass_user varchar (300) not null,
+nome_user varchar (300) not null,
+email_user varchar(300) not null,
+pass_user varchar (300) not null
 );
-insert into user values ('admin','root');
+insert into user values (null,'admin','admin@localhost','root');
 
 create table bo(
   cod_bo int primary key auto_increment,
