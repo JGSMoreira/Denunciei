@@ -5,7 +5,7 @@ include '../../padroes/default.php';
 //CONFIGURAÇÕES EDITÁVEIS
 $pagina = 'Fazer Denúncia'; //Nome da página
 $metodo = 'post'; //Método de envio de formulário
-$acao = 'cadastrar_bo_salvar.php'; //O que deve ser feito ao apertar o botão de envio
+$acao = 'salvar.php'; //O que deve ser feito ao apertar o botão de envio
 $salvar = 'Enviar denúncia'; //Texto do botão de envio
 $cancelar_acao = '../../admin/index.php'; // O que deve ser feito ao apertar o botão de cancelamento
 //FIM DAS CONFIGURAÇÕES EDITÁVEIS
