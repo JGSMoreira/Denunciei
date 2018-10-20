@@ -1,5 +1,5 @@
 <?php
-//CONFIGURAÇÃO PADRÃO
+//CONFIGURAÇÃO PADRÃO 
 include '../padroes/default.php';
 
 //CONFIGURAÇÕES EDITÁVEIS
