@@ -5,7 +5,7 @@ if (empty($_GET['id'])) {
 }else{
 $id = filter_var($_GET['id']);
 /* criar codigo sql */
-$sql = "DELETE FROM bo WHERE cod_bo = :id;";
+$sql = "DELETE FROM denuncia WHERE cod_den = :id;";
 
 $delete= $conn->prepare($sql);
 $delete->bindParam(':id',$id);
@@ -16,5 +16,5 @@ if (! $resultado) {
   exit;
 }
 echo $delete->rowCount(). " linha";
-header('Location:../../consultas/bo.php');
+header('Location:../../consultas/denuncias.php');
 }

@@ -52,83 +52,84 @@ $title = $sistema.' - '.$pagina;
          <h2 style="margin-top: 2px">Dados da Vítima</h2>
 
          <div class="form-group">
-           <label for="nomevit">Nome da vítima</label>
-           <input type="text" class="form-control" name="nomevit" placeholder="Digite o nome da vítima.">
+           <label for="nomevit">Nome</label>
+           <input type="text" class="form-control" name="nomevit" placeholder="Digite o nome." required>
          </div>
 
          <div class="form-group">
-           <label for="sobrenomevit">Sobrenome da vítima</label>
-           <input type="text" class="form-control" name="sobrenomevit" placeholder="Digite o sobrenome da vítima.">
+           <label for="sobrenomevit">Sobrenome</label>
+           <input type="text" class="form-control" name="sobrenomevit" placeholder="Digite o sobrenome." required>
          </div>
 
          <div class="form-group">
-           <label for="idadevit">Idade da vítima</label>
-           <input type="number" class="form-control" name="idadevit" placeholder="Digite a idade da vítima.">
+           <label for="datanvit">Data de Nascimento</label>
+           <input type="date" class="form-control" name="datanvit" required >
          </div>
 
          <div class="form-group">
-           <label for="enderecovit">Endereco da vítima</label>
-           <input type="text" class="form-control" name="enderecovit" placeholder="Digite o endereço da vítima.">
+           <label for="enderecovit">Endereco</label>
+           <input type="text" class="form-control" name="enderecovit" placeholder="Digite o endereço." required>
          </div>
 
          <div class="form-group">
-           <label for="telefonevit">Telefone da vítima</label>
-           <input type="number" class="form-control" name="telefonevit" placeholder="Digite o telefone da vítima.">
+           <label for="telefonevit">Telefone</label>
+           <input type="number" class="form-control" name="telefonevit" placeholder="Digite o telefone." required>
          </div>
 
          <div class="form-group">
-           <label for="´profissaovit">Profissão da vítima</label>
-           <input type="text" class="form-control" name="profissaovit" placeholder="Informe a profissão da vítima.">
+           <label for="´profissaovit">Profissão</label>
+           <input type="text" class="form-control" name="profissaovit" placeholder="Informe a profissão." required>
          </div>
 
          <h2>Dados do Suspeito</h2>
 
          <div class="form-group">
-           <label for="nomesusp">Nome do suspeito</label>
-           <input type="text" class="form-control" name="nomesusp" placeholder="Digite o nome do suspeito.">
+           <label for="nomesusp">Nome</label>
+           <input type="text" class="form-control" name="nomesusp" placeholder="Digite o nome.">
          </div>
 
          <div class="form-group">
-           <label for="sobrenomesusp">Sobrenome do suspeito</label>
-           <input type="text" class="form-control" name="sobrenomesusp" placeholder="Digite o sobrenome do suspeito.">
+           <label for="sobrenomesusp">Sobrenome</label>
+           <input type="text" class="form-control" name="sobrenomesusp" placeholder="Digite o sobrenome.">
          </div>
 
          <div class="form-group">
-           <label for="idadesusp">Idade do suspeito</label>
-           <input type="number" class="form-control" name="idadesusp" placeholder="Digite a idade do suspeito.">
+           <label for="datansusp">Data do Nascimento</label>
+           <input type="date" class="form-control" name="datansusp" >
          </div>
 
          <div class="form-group">
            <label for="enderecosusp">Endereco do suspeito</label>
-           <input type="text" class="form-control" name="enderecosusp" placeholder="Digite o endereço do suspeito.">
+           <input type="text" class="form-control" name="enderecosusp" placeholder="Digite o endereço.">
          </div>
 
          <div class="form-group">
            <label for="telefonesusp">Telefone do suspeito</label>
-           <input type="number" class="form-control" name="telefonesusp" placeholder="Digite o telefone do suspeito.">
+           <input type="number" class="form-control" name="telefonesusp" placeholder="Digite o telefone.">
          </div>
 
          <h2>Descrição</h2>
 
          <div class="form-group">
            <label for="dataacon">Data da Ocorrência</label>
-           <input type="date" class="form-control" name="dataacon">
+           <input type="date" class="form-control" name="dataacon" required>
          </div>
 
          <div class="form-group">
            <label for="motivo">Motivo da denúncia</label>
-           <select class="form-control" name="motivo">
+           <select class="form-control" name="motivo" required>
              <option>Selecione o motivo da denúncia</option>
              <option>Furto</option>
              <option>Estupro</option>
              <option>Roubo</option>
              <option>Homicídio</option>
+             <option>Outros</option>
            </select>
          </div>
 
          <div class="form-group">
            <label for="descricao">Descrição do caso </label>
-           <textarea rows="10" cols="30" class="form-control" name="descricao" placeholder="Informe a descrição do caso."></textarea>
+           <textarea rows="10" cols="30" class="form-control" name="descricao" placeholder="Informe a descrição do caso." required></textarea>
          </div>
 
 

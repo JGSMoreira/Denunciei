@@ -1,4 +1,21 @@
 <?php
+$titulo = "Atualizar";
+include '../../padroes/default.php';
+include '../../conexao/conexao.php';
+
+if(empty($_GET['id'])){
+  header ('location:../../consultas/denuncias.php');
+}else{
+  $id = filter_var ($_GET['id']);
+  $sql = "SELECT * FROM denuncia where cod_den =:id";
+  $consulta = $conn->prepare($sql);
+  $consulta->bindParam(':id', $id);
+  $consulta->execute();
+  $registro = $consulta->fetch(PDO::FETCH_OBJ);
+}
+ ?>
+ <?php
+
 //CONFIGURAÇÃO PADRÃO
 include '../../padroes/default.php';
 
@@ -44,52 +61,43 @@ $title = $sistema.' - '.$pagina;
 
          <div class="form-group">
            <label for="titulo">Título</label>
-           <input type="text" class="form-control" name="titulo"  placeholder="Digite o titulo da denúncia." required>
+           <input type="text" class="form-control" name="titulo"  placeholder="Digite o titulo da denúncia." value="<?php echo $registro->titulo_den; ?>">
          </div>
 
          <div class="form-group">
            <label for="suspeito">Suspeito</label>
-           <input type="text" class="form-control" name="suspeito" placeholder="Digite o nome do suspeito." required>
+           <input type="text" class="form-control" name="suspeito" placeholder="Digite o nome do suspeito." value="<?php echo $registro->suspeito_den; ?>">
          </div>
 
          <div class="form-group">
            <label for="data">Data do ocorrido</label>
-           <input type="date" class="form-control" name="data"  placeholder="Digite a data do ocorrido." required>
+           <input type="date" class="form-control" name="data"  placeholder="Digite a data do ocorrido." value="<?php echo $registro->data_den; ?>">
          </div>
 
          <h2>Descrição</h2>
 
          <div class="form-group">
            <label for="motivo">Motivo da denúncia</label>
-           <select class="form-control" name="motivo" required>
-             <option>Selecione o motivo da denúncia</option>
-             <option>Furto</option>
-             <option>Estupro</option>
-             <option>Roubo</option>
-             <option>Homicídio</option>
-             <option>Outros</option>
-           </select>
+           <input type="text" class="form-control" name="motivo" value="<?php echo $registro->motivo_den; ?>">
          </div>
 
         <div class="form-group">
            <label for="descricao">Descrição</label>
-           <textarea rows="10" cols="30" class="form-control" name="descricao"  placeholder="Descreva o ocorrido com a maior quantidade de detalhes possíveis (não digite o seu nome)." required></textarea>
+           <textarea rows="10" cols="30" class="form-control" name="descricao"  placeholder="Descreva o ocorrido com a maior quantidade de detalhes possíveis (não digite o seu nome)."><?php echo $registro->descricao_den; ?></textarea>
         </div>
 
         <h2>Contato</h2>
 
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" class="form-control" name="email"  placeholder="Digite o seu email." required>
+          <input type="email" class="form-control" name="email"  placeholder="Digite o seu email." value="<?php echo $registro->email_den; ?>">
         </div>
 
         <!-- FIM DA PARTE EDITÁVEL -->
 
       </div>
       <div class="buttonbar">
-        <button type="submit" class="btn btn-primary"><?= $salvar ?></button>
-        <a href="<?= $cancelar_acao ?>" class="btn btn-danger">Cancelar</a>
-      </div>
+       <a href="../../consultas/denuncias.php" class="btn btn-primary">OK</a>
     </form>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

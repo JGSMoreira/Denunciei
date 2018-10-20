@@ -63,11 +63,12 @@ $title = $sistema.' - '.$pagina;
             <?php foreach ($registros as $registro) { ?>
             <tr>
                <td><?php  echo $registro->nomeVitima_bo." ".$registro->sobrenomeVitima_bo; ?></td>
-               <td><?php  echo $registro->idadeVitima_bo; ?></td>
+               <td><?php  echo $registro->datanVitima_bo; ?></td>
                <td><?php  echo $registro->nomeSuspeito_bo." ".$registro->sobrenomeSuspeito_bo; ?></td>
                <td><?php  echo $registro->dataOcorrido_bo; ?></td>
                <td><?php  echo $registro->assuntoOcorrido_bo; ?></td>
-               <td><a  href="deletar.php?id=<?php echo $registro->cod_bo;?>" class="btn btn-danger">Excluir</a></td>
+               <td><a  href="../cadastros/BO/atualizar.php?id=<?php echo $registro->cod_bo;?>" class="btn btn-primary">Visualizar</a>
+               <a  href="../cadastros/BO/deletar.php?id=<?php echo $registro->cod_bo;?>" class="btn btn-danger">Excluir</a></td>
            </tr>
            <?php  }?>
         <!-- FIM DA PARTE EDITÁVEL -->

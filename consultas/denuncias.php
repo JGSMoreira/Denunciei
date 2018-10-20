@@ -60,8 +60,10 @@ $title = $sistema.' - '.$pagina;
             <?php foreach ($registros as $registro) { ?>
             <tr>
                <td><?php  echo $registro->titulo_den; ?></td>
-               <td><?php  echo $registro->assunto_den ?></td>
-               <td><a  href="deletar.php?id=<?php echo $registro->cod_bo;?>" class="btn btn-danger">Excluir</a></td>
+               <td><?php  echo $registro->motivo_den ?></td>
+                <td><a  href="../../cadastros/Denuncia/atualizar.php?id=<?php echo $registro->cod_den;?>" class="btn btn-primary">Visualizar</a>
+                  <a  href="../../cadastros/Denuncia/deletar.php?id=<?php echo $registro->cod_den;?>" class="btn btn-danger">Excluir</a></td>
+              </tr>
            </tr>
            <?php  }?>
         <!-- FIM DA PARTE EDITÁVEL -->
