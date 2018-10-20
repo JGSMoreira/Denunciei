@@ -16,5 +16,5 @@ if (! $resultado) {
   exit;
 }
 echo $delete->rowCount(). " linha";
-header('Location:consulta.php');
+header('Location:../../consultas/bo.php');
 }

@@ -1,20 +1,23 @@
 <?php
-include '../conexao/conexao.php';
+include '../../conexao/conexao.php';
 $titulo = $_POST['titulo'];
-$email = $_POST['suspeito'];
+$suspeito = $_POST['suspeito'];
 $data = $_POST['data'];
+$motivo = $_POST['motivo'];
 $descricao = $_POST['descricao'];
 $email = $_POST['email'];
 
 // Criar código sql
 
-$sql = "INSERT INTO denuncia (titulo_den, suspeito_den, data_den, descricao_den,email_den, assunto_den) values (:titulo, :suspeito, :datad, :descricao, :email, :assunto)";
+$sql = "INSERT INTO denuncia (titulo_den, suspeito_den, data_den, motivo_den, descricao_den, email_den) values (:titulo, :suspeito, :data, :motivo, :descricao, :email)";
 
 $inserir = $conn->prepare($sql);
 $inserir-> bindParam (':titulo', $titulo);
-$inserir-> bindParam (':email', $email);
+$inserir-> bindParam (':suspeito', $suspeito);
+$inserir-> bindParam (':data', $data);
+$inserir-> bindParam (':motivo', $motivo);
 $inserir-> bindParam (':descricao', $descricao);
-$inserir-> bindParam (':assunto', $assunto);
+$inserir-> bindParam (':email', $email);
 
 $resultado = $inserir->execute();
 
@@ -24,11 +27,9 @@ if( ! $resultado)
   exit;
 }
 
-echo $inserir->rowCount(). "linhas";
+header('location:sucesso.php');
 
 
  ?>
- <a href="cadastrar.php"class="btn btn-success">Cadastrar Nova Pessoa</a>
-  <a href="consulta.php"class="btn btn-primary">HOME</a>
 
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+ 
