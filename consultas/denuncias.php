@@ -3,7 +3,7 @@
 include '../padroes/default.php';
 
 //CONFIGURAÇÕES EDITÁVEIS
-$pagina = 'Consulta de Boletins de Ocorrência'; //Nome da página
+$pagina = 'Consulta de Denuncias'; //Nome da página
 $metodo = 'post'; //Método de envio de formulário
 $acao = '..\..\index.html'; //O que deve ser feito ao apertar o botão de envio
 $salvar = 'Ok, voltar ao início.'; //Texto do botão de envio
@@ -13,7 +13,7 @@ $cancelar_acao = 'sucesso.php'; // O que deve ser feito ao apertar o botão de c
 //BANCO DE DADOS
 include '../conexao/conexao.php';
 
-$sql = "SELECT * FROM bo;";
+$sql = "SELECT * FROM denuncia;";
 $consulta = $conn->prepare($sql);
 $consulta->execute();
 
@@ -51,22 +51,17 @@ $title = $sistema.' - '.$pagina;
          <table class="table">
            <thead>
              <tr>
-               <th>Vítima</th>
-               <th>Idade</th>
-               <th>Suspeito</th>
-               <th>Data da Ocorrência</th>
-               <th>Motivo da Denúncia</th>
-               <th>Opções</th>
+               <th>Denuncia</th>
+               <th>assunto</th>
+
+                <th>Opções</th>
             </tr>
           </thead>
           <tbody>
             <?php foreach ($registros as $registro) { ?>
             <tr>
-               <td><?php  echo $registro->nomeVitima_bo." ".$registro->sobrenomeVitima_bo; ?></td>
-               <td><?php  echo $registro->idadeVitima_bo; ?></td>
-               <td><?php  echo $registro->nomeSuspeito_bo." ".$registro->sobrenomeSuspeito_bo; ?></td>
-               <td><?php  echo $registro->dataOcorrido_bo; ?></td>
-               <td><?php  echo $registro->assuntoOcorrido_bo; ?></td>
+               <td><?php  echo $registro->titulo_den; ?></td>
+               <td><?php  echo $registro->assunto_den ?></td>
                <td><a  href="deletar.php?id=<?php echo $registro->cod_bo;?>" class="btn btn-danger">Excluir</a></td>
            </tr>
            <?php  }?>
@@ -74,7 +69,7 @@ $title = $sistema.' - '.$pagina;
 
       </div>
       <div class="buttonbar">
-        <a href="../cadastros/bo/cadastrar.php" class="btn btn-primary">Registrar novo B.O.</a>
+        <a href="../cadastros/Denuncia/cadastrar.php" class="btn btn-primary">Registrar nova Denuncia</a>
         <a href="../admin/index.php" class="btn btn-primary">Voltar para o Dashboard</a>
       </div>
 
