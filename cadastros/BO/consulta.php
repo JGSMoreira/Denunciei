@@ -66,9 +66,9 @@ $registros = $consulta->fetchAll(PDO:: FETCH_OBJ);
 
       <td>
 
-        <a href="atualizar.php?id=<?php echo $registro->cod_pes; ?>"class="btn btn-primary">Editar</a>
 
-      <a  href="deletar.php?id=<?php echo $registro->cod_pes;?>" class="btn btn-danger">Excluir</a>
+
+      <a  href="deletar.php?id=<?php echo $registro->cod_bo;?>" class="btn btn-danger">Excluir</a>
 
 
 
